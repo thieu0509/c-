@@ -1,0 +1,83 @@
+#include<stdio.h>
+#include<conio.h>
+#include<iostream>
+#include<string.h>
+using namespace std;
+
+class ThongTin {
+	private:
+		char mscd[8];
+		char*hoten;
+		char*noisinh;
+		int namsinh;
+		float tuoi;
+	public:
+		ThongTin();
+		ThongTin(char,char*,int,float);
+		void NhapTT(char*);
+		void InTT(char*);
+		~ThongTin();
+		ThongTin(const ThongTin&);
+};
+	ThongTin::ThongTin(char ms,char* ht,int ns,float t) {
+		strcpy(mscd,ms);
+
+		hoten = new char[50];
+		strcpy(hoten,ht);
+
+		namsinh=1999;
+		tuoi=0;
+	};
+	 ThongTin::ThongTin(char* ms,char* ht,int ns,float t){
+		strcpy(mscd,ms);
+
+		hoten=new char[50]
+		strcpy(hoten,ht);
+
+		namsinh=ns;
+		tuoi=t;
+	};
+
+	void ThongTin::NhapTT(char*str){
+		cout<<str;
+		cout<<"\n Ma So Cong Dan:";
+		cin>>mscd;
+		cout<<"\n Ten Cong Dan:";
+		cin.ignore();
+		cin.getline(hoten,49);
+		cout<<"\n Nam sinh:";
+		cin>>namsinh;
+		cout<<"\n Tuoi:";
+		cin>>tuoi; 
+	};
+
+	void ThongTin::InTT(char*str){
+		cout<<str;
+
+		cout<<"\n"<<mscd<<":"<<hoten<<" (NS:"<<namsinh<<")Tuoi:"<<tuoi;
+	};
+	
+	void::~ThongTin(){
+		delete[]hoten;
+	};
+	
+	ThongTin::ThongTin(const ThongTin& s){
+		strcpy(mscd,s.mscd);
+		hoten = new char[50];
+		strcpy(hoten,s.hoten);
+		namsinh = s.namsinh;
+		tuoi = s.tuoi;
+	};
+
+	int main()	{
+		CongDan a;
+		a.InTT("\n Cong Dan A:");
+
+		CongDan b ("01","nguyen van an",1990,8.5);
+
+		CongDan c;
+		c.NhapTT("\n Nhap Thong Tin Cong Dan: ");
+		c.InTT("\n Cong Dan: ")
+
+		getch();
+	}	
